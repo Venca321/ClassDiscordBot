@@ -1,11 +1,11 @@
 
 from discord.ext import commands, tasks
 from zoneinfo import ZoneInfo
-import discord, sqlite3, random, string, datetime, dotenv
+import discord, sqlite3, random, string, datetime, os
 
 REPORT_TIME = datetime.datetime.strptime('17:00', '%H:%M')
 DATABASE_FILE = "Data/database.db"
-TOKEN = dotenv.dotenv_values(".env")["TOKEN"]
+TOKEN = os.environ["TOKEN"]
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix='!', intents=intents)
