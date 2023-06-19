@@ -22,6 +22,8 @@ def get_id(length):
     return new_id
 
 def db_setup():
+    try: os.mkdir("Data")
+    except: None
     connection = sqlite3.connect(DATABASE_FILE)
     cursor = connection.cursor()
 
